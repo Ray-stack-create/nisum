@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Grades Table</title>
+  <style>
+    h1{
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+    table {
+      width: 80%;
+      margin: 50px auto;
+      border-collapse: collapse;
+      font-family: Arial, sans-serif;
+    }
+
+    thead {
+      background-color: #8b3bc9;
+      color: white;
+    }
+
+    tfoot {
+      background-color: #ecf0f1;
+      font-weight: bold;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: center;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    tbody tr:hover {
+      background-color: #f1f1f1;
+    }
+  </style>
+</head>
+<body>
+<h1>Student Information</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Student Name</th>
+        <th>Subject</th>
+        <th>Marks</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Sankhadip</td>
+        <td>Mathematics</td>
+        <td>88</td>
+      </tr>
+      <tr>
+        <td>Sohani</td>
+        <td>Science</td>
+        <td>92</td>
+      </tr>
+      <tr>
+        <td>Samridhi</td>
+        <td>History</td>
+        <td>76</td>
+      </tr>
+      <tr>
+        <td>Satyaki</td>
+        <td>English</td>
+        <td>85</td>
+      </tr>
+      <tr>
+        <td>Soham</td>
+        <td>Geography</td>
+        <td>90</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="2">Average Marks</td>
+        <td>86.2</td>
+      </tr>
+    </tfoot>
+  </table>
+
+</body>
+</html>
