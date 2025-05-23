@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .gallery {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 16px;
+   max-width: 900px;
+   margin: 2em auto;
+   padding: 0 1em;
+}
+
+
+.gallery-item img {
+   width: 100%;
+   display: block;
+   border-radius: 12px;
+   box-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
+}
+
+
+/* Responsive: 1 column on mobile */
+@media (max-width: 600px) {
+   .gallery {
+       grid-template-columns: 1fr;
+   }
+}
+
+  </style>
+</head>
+<body>
+  <div class="gallery">
+   <div class="gallery-item"><img src="./download (1).jpeg" alt="Gallery 1"></div>
+   <div class="gallery-item"><img src="./download (2).jpeg" alt="Gallery 2"></div>
+   <div class="gallery-item"><img src="./download (3).jpeg" alt="Gallery 3"></div>
+   <div class="gallery-item"><img src="./download (4).jpeg" alt="Gallery 4"></div>
+   <div class="gallery-item"><img src="./download (5).jpeg" alt="Gallery 5"></div>
+   <div class="gallery-item"><img src="./download.jpeg" alt="Gallery 6"></div>
+</div>
+</body>
+</html>
