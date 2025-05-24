@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Styled Todo List with Local Storage</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f2f5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px;
+    }
+
+    h2 {
+      color: #333;
+    }
+
+    #taskInput {
+      width: 300px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-right: 10px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 10px 15px;
+      background-color: #54dc16;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    ul#taskList {
+      list-style-type: none;
+      padding: 0;
+      width: 400px;
+      margin-top: 20px;
+    }
+
+    li {
+      background-color: #fff;
+      margin-bottom: 10px;
+      padding: 12px 15px;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    li:hover {
+      background-color: #f8f9fa;
+    }
+
+    li.completed {
+      text-decoration: line-through;
+      color: #888;
+      background-color: #e2e3e5;
+    }
+
+    li button {
+      background-color: #dc3545;
+      font-size: 14px;
+      padding: 5px 10px;
+    }
+
+    li button:hover {
+      background-color: #a71d2a;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Todo List</h2>
+
+  <div>
+    <input type="text" id="taskInput" placeholder="Enter a new task" />
+    <button onclick="addTask()">Add</button>
+  </div>
+
+  <ul id="taskList"></ul>
+
+  <script>
+    let tasks = [];
+
+    window.onload = function () {
+      const saved = localStorage.getItem("tasks");
+      if (saved) {
+        tasks = JSON.parse(saved);
+        renderTasks();
+      }
+    };
+
+    function saveTasks() {
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+    }
+
+    function addTask() {
+      const input = document.getElementById("taskInput");
+      const text = input.value.trim();
+      if (text !== "") {
+        tasks.push({ text, completed: false });
+        input.value = "";
+        saveTasks();
+        renderTasks();
+      }
+    }
+
+    function toggleTask(index) {
+      tasks[index].completed = !tasks[index].completed;
+      saveTasks();
+      renderTasks();
+    }
+
+    function deleteTask(index) {
+      tasks.splice(index, 1);
+      saveTasks();
+      renderTasks();
+    }
+
+    function renderTasks() {
+      const list = document.getElementById("taskList");
+      list.innerHTML = "";
+      tasks.forEach((task, index) => {
+        const li = document.createElement("li");
+        li.className = task.completed ? "completed" : "";
+        li.textContent = task.text;
+        li.onclick = () => toggleTask(index);
+
+        const delBtn = document.createElement("button");
+        delBtn.textContent = "Delete";
+        delBtn.onclick = (e) => {
+          e.stopPropagation(); 
+          deleteTask(index);
+        };
+
+        li.appendChild(delBtn);
+        list.appendChild(li);
+      });
+    }
+  </script>
+
+</body>
+</html>
