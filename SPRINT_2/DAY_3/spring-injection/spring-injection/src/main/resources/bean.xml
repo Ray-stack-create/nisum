@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- SpellChecker Bean -->
+    <bean id="spellChecker" class="com.example.SpellChecker"/>
+
+    <!-- Constructor Injection -->
+    <bean id="textEditor" class="com.example.TextEditor">
+        <constructor-arg ref="spellChecker"/>
+    </bean>
+
+    <!-- Setter Injection -->
+    <bean id="textEditorSetter" class="com.example.TextEditorSetter">
+        <property name="spellChecker" ref="spellChecker"/>
+    </bean>
+
+</beans>
