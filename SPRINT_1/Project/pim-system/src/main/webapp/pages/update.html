@@ -1,63 +1,62 @@
 <!-- src/main/webapp/pages/update.html -->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>PIM</title>
-    <link rel="stylesheet" href="/pim-system/css/update.css">
-</head>
-<body>
-<div class="container">
-    <aside class="sidebar">
-        <h2>Product Info<br>Management System</h2>
+    <link rel="stylesheet" href="/pim-system/css/update.css" />
+  </head>
+  <body>
+    <div class="container">
+      <aside class="sidebar">
+        <h2>Product Info<br />Management System</h2>
         <nav>
-            <ul>
-                <li >Dashboard</li>
-                <li>Products</li>
-                <li class="active">Edit Products</li>
-            </ul>
+          <ul>
+            <li>Dashboard</li>
+            <li>Products</li>
+            <li>Product Attribute</li>
+          </ul>
         </nav>
-    </aside>
-    <main class="main-content">
+      </aside>
+      <main class="main-content">
         <section class="form-header">
-            <h1>Edit Product</h1>
-            </section>
-
+          <h1>Edit Product</h1>
+        </section>
 
         <section class="form-attributes">
-            <form action="/update-product" method="POST" id="editProductForm">
-                <input type="hidden" id="productId">
+          <form action="/update-product" method="POST" id="editProductForm">
+            <input type="hidden" id="productId" />
 
-        <div class="form-group">
-            <label for="category">Category</label>
-            <select id="category" name="category" required>
+            <div class="form-group">
+              <label for="category">Category</label>
+              <select id="category" name="category" required>
                 <option value="">Select a category</option>
                 <option value="Mens Apparel">Mens Apparel</option>
                 <option value="Women Apparel">Women Apparel</option>
                 <option value="Kids Apparel">Kids Apparel</option>
-            </select>
-        </div>
+              </select>
+            </div>
 
-        <div class="form-group">
-            <label for="status">Status</label>
-            <select id="status" name="status" required>
+            <div class="form-group">
+              <label for="status">Status</label>
+              <select id="status" name="status" required>
                 <option value="">Select status</option>
                 <option value="Published">Published</option>
                 <option value="Draft">Draft</option>
-            </select>
-        </div>
+              </select>
+            </div>
 
-        <div class="form-group">
-            <label for="date">Last Modified Date</label>
-            <input type="date" id="date" name="date" required>
-        </div>
-        <div class="form-actions">
-                <button type="submit">Save Changes</button>
-        </div>
-            </form>
+            <div class="form-group">
+              <label for="date">Last Modified Date</label>
+              <input type="date" id="date" name="date" required />
+            </div>
+            <div class="form-actions">
+              <button type="submit">Save Changes</button>
+            </div>
+          </form>
         </section>
-    </main>
-</div>
-<script src="/pim-system/js/update.js"></script>
-</body>
+      </main>
+    </div>
+    <script src="/pim-system/js/update.js"></script>
+  </body>
 </html>

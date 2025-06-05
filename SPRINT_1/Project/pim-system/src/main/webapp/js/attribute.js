@@ -38,18 +38,17 @@ form.addEventListener('submit', function (event) {
       const formData = new FormData(form)
 
       try {
-        const response = await fetch('/pim-system/add-product', {
+        const response = await fetch('/pim-system/add-attribute', {
           method: 'POST',
           body: new URLSearchParams(formData),
           headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
           }
         })
-
         if (response.ok) {
           modalContent.innerHTML = `
-          <h3>Product Added Successfully ✅</h3>
-          <p>Your product has been added to the system.</p>
+          <h3>Product Attribute Added Successfully ✅</h3>
+          <p>Your product has been updated to the system.</p>
           <div class="modal-actions">
             <button id="okButton">OK</button>
           </div>
@@ -63,12 +62,12 @@ form.addEventListener('submit', function (event) {
             })
         } else {
           modalContent.innerHTML = `
-          <h3>Failed to Add Product ❌</h3>
-          <p>Server responded with error. Please try again.</p>
-          <div class="modal-actions">
-            <button id="okButton">OK</button>
-          </div>
-        `
+                  <h3>Failed to Add Product Attribute❌</h3>
+                  <p>Server responded with error. Please try again.</p>
+                  <div class="modal-actions">
+                    <button id="okButton">OK</button>
+                  </div>
+                `
           document
             .getElementById('okButton')
             .addEventListener('click', function () {
@@ -78,12 +77,12 @@ form.addEventListener('submit', function (event) {
       } catch (error) {
         console.error('Error:', error)
         modalContent.innerHTML = `
-        <h3>Error Occurred ⚠️</h3>
-        <p>${error.message}</p>
-        <div class="modal-actions">
-          <button id="okButton">OK</button>
-        </div>
-      `
+                <h3>Error Occurred ⚠️</h3>
+                <p>${error.message}</p>
+                <div class="modal-actions">
+                  <button id="okButton">OK</button>
+                </div>
+              `
         document
           .getElementById('okButton')
           .addEventListener('click', function () {
