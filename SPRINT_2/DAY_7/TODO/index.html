@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TypeScript Todo List</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Todo List (TypeScript)</h1>
+  <div class="todo-form">
+    <input type="text" id="todoTitle" placeholder="Todo title" />
+    <select id="todoPriority">
+      <option value="High">High</option>
+      <option value="Medium">Medium</option>
+      <option value="Low">Low</option>
+    </select>
+    <button id="addBtn">Add Todo</button>
+  </div>
+  <div id="todoList"></div>
+
+  <script type="module" src="./dist/app.js"></script>
+</body>
+</html>
