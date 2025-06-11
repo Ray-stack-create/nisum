@@ -1,0 +1,92 @@
+<!-- src/main/webapp/html/homepage.html -->
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+  <head>
+    <meta charset="UTF-8" />
+    <title>PIM</title>
+    <link rel="stylesheet" href="css/homepage.css" />
+  </head>
+  <body>
+    <div class="container">
+      <aside class="sidebar">
+        <nav>
+          <h2>Product Info Management System</h2>
+          <ul>
+            <li class="active" id="dashboard">Dashboard</li>
+            <li id="products">Products</li>
+            <li id="product-attribute">Product Attribute</li>
+          </ul>
+        </nav>
+      </aside>
+      <main class="main-content">
+        <section class="dashboard-header">
+          <h1>Products Dashboard</h1>
+        </section>
+
+        <section class="stats-section">
+          <div class="stats">
+            <div class="stat-card">
+              <div class="stat-label">Total Products</div>
+              <div class="stat-value" id="total-products"></div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">Recently Updated</div>
+              <div class="stat-value" id="recent-updated"></div>
+            </div>
+          </div>
+          <br />
+          <br />
+        </section>
+
+        <section class="products-list-section">
+          <div class="products-list-header">
+            <h2>Products List</h2>
+          </div>
+          <div class="products-list-header">
+            <div class="button-group">
+              <button id="addProductBtn">Add Product</button>
+              <button id="bulkImportBtn">Bulk Import</button>
+
+              <div class="search-box">
+                <input
+                  type="text"
+                  id="searchInput"
+                  placeholder="Search products by ID..."
+                />
+                <button id="searchButton">🔍</button>
+              </div>
+            </div>
+          </div>
+          <table class="products-table" id="productsTable">
+            <thead>
+              <tr>
+                <th>Product ID</th>
+                <th>Product Name</th>
+
+                <th>Category</th>
+                <th>Status</th>
+                <th>Last Modified</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+
+            <tbody id="productsTableBody">
+              <!-- JS will inject rows here -->
+            </tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+    <div id="searchResultModal" class="modal" style="display: none">
+      <div class="modal-content">
+        <span id="closeSearchModal" style="float: right; cursor: pointer"
+          >&times;</span
+        >
+        <h2>Product Details</h2>
+        <div id="searchResultContent"></div>
+      </div>
+    </div>
+
+    <script src="/pim-system/js/script.js"></script>
+  </body>
+</html>
