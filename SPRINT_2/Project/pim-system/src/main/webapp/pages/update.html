@@ -1,0 +1,75 @@
+<!-- src/main/webapp/pages/update.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>PIM</title>
+    <link rel="stylesheet" href="/pim-system/css/update.css" />
+  </head>
+  <body>
+    <div class="container">
+      <aside class="sidebar">
+        <h2>Product Info<br />Management System</h2>
+        <nav>
+          <ul>
+            <li>Dashboard</li>
+            <li>Products</li>
+            <li>Product Attribute</li>
+          </ul>
+        </nav>
+      </aside>
+      <main class="main-content">
+        <section class="form-header">
+          <h1>Edit Product</h1>
+        </section>
+
+        <section class="form-attributes">
+          <form action="/update" method="POST" id="editProductForm">
+            <input type="hidden" id="productId" />
+            <input type="hidden" id="productName" name="productName" />
+
+            <div class="form-group">
+              <label for="category">Category</label>
+              <select id="category" name="category" required>
+                <option value="">Select a category</option>
+                <option value="Mens Apparel">Mens Apparel</option>
+                <option value="Women Apparel">Women Apparel</option>
+                <option value="Kids Apparel">Kids Apparel</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="status">Status</label>
+              <select id="status" name="status" required>
+                <option value="">Select status</option>
+                <option value="Published">Published</option>
+                <option value="Draft">Draft</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="date">Last Modified Date</label>
+              <input type="date" id="date" name="date" required />
+            </div>
+            <div class="form-actions">
+              <button type="submit">Save Changes</button>
+            </div>
+          </form>
+        </section>
+      </main>
+    </div>
+
+    <!-- Custom Confirmation Modal -->
+    <div id="confirmModal" class="modal">
+      <div class="modal-content">
+        <h3>Confirm Product Addition</h3>
+        <p>Are you sure you want to add this product?</p>
+        <div class="modal-actions">
+          <button id="confirmYes">Yes</button>
+          <button id="confirmNo">No</button>
+        </div>
+      </div>
+    </div>
+    <script src="/pim-system/js/update.js"></script>
+  </body>
+</html>
