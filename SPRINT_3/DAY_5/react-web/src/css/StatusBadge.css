@@ -1,0 +1,31 @@
+.badge {
+  padding: 6px 14px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.08);
+}
+
+.badge:hover {
+  opacity: 0.95;
+  transform: scale(1.03);
+}
+
+.badge-success {
+  background-color: #32d58d;   
+  color: white;
+}
+
+.badge-error {
+  background-color: #f44336;  
+  color: white;
+}
+
+.badge-warning {
+  background-color: #ff9800;   
+  color: white;
+}
