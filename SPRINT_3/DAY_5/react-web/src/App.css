@@ -1,0 +1,95 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+
+
+/* Light Theme (default) */
+.App.light {
+  background-color: #f8f8f5;
+  color: #000;
+}
+
+/* Dark Theme */
+.App.dark {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  position: absolute;
+  top: 110px;
+  right: 30px;
+  padding: 12px 24px;
+  font-size: 16px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(45deg, #311a74, #141515);
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+  z-index: 1000;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.2);
+}
+
+.App.dark .theme-toggle {
+  background: linear-gradient(45deg, #f1a308, #e2eded);
+}
+
+.App.dark .card {
+  background-color: #1e1e1e;
+  color: #fff;
+  border: 1px solid #444;
+}
+
+.App.dark .btn-primary {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+.App.dark .btn-primary:hover {
+  background-color: #0b5ed7;
+  border-color: #0a58ca;
+}

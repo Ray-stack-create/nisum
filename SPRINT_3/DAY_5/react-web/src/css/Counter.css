@@ -1,0 +1,65 @@
+.count {
+  font-size: 40px;
+  font-weight: bolder;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+}
+
+.counter-inc {
+  padding: 10px 20px;
+  margin-right: 10px;
+  font-size: 16px;
+  background-color: rgb(8, 128, 22);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.counter-inc:hover {
+  background-color: rgb(96, 248, 58);
+  transform: scale(1.1);
+}
+
+.reset {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: rgb(160, 186, 8);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding-left: 10px;
+}
+
+.reset:hover {
+  background-color: rgb(222, 232, 84);
+  transform: scale(1.1);
+}
+
+.counter-dec {
+  padding: 10px 20px;
+  margin-left: 10px;
+  font-size: 16px;
+  background-color: rgb(216, 19, 19);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding-left: 10px;
+}
+
+.counter-dec:hover {
+  background-color: rgb(254, 67, 105);
+  transform: scale(1.1);
+}
+
+.App.dark .count {
+    color: #fff;
+}
