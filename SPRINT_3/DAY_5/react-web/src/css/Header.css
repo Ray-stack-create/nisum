@@ -1,0 +1,100 @@
+.main-header {
+  display: flex;
+  background-color: rgb(203, 203, 187);
+  color: rgb(83, 80, 80);
+  width: 100%;
+  justify-content: space-between;
+  box-shadow: 0px 10px 20px rgba(106, 104, 104, 0.3);
+}
+
+.header ul {
+  display: flex;
+  text-decoration: none;
+  list-style-type: none;
+  gap: 30px;
+  padding-right: 100px;
+  padding-bottom: 40px;
+  padding-top: 20px;
+}
+
+.header li {
+  font-size: large;
+  font-weight: bold;
+}
+
+.header li:hover {
+  text-decoration: underline;
+  color: rgb(47, 47, 47);
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.App.dark .header li:hover {
+  text-decoration: underline;
+  color: rgb(255, 255, 255);
+  transition: color 0.3s ease;
+}
+
+.Logo {
+  padding: 10px;
+}
+
+.menu {
+  width: 20%;
+  position: fixed;
+  background-color: rgb(203, 203, 187);
+  box-shadow: 0px 10px 20px rgba(106, 104, 104, 0.3);
+  height: 50vh;
+  text-align: left;
+  list-style: none;
+  right: -100%;
+  transition: 0.5s;
+  z-index: 9999;
+}
+
+.menu ul li {
+  list-style: none;
+  padding: 10px 0px;
+  font-size: large;
+  font-weight: 400;
+}
+
+.menu ul li:hover {
+  text-decoration: underline;
+  color: rgb(47, 47, 47);
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.cross {
+  margin-left: 120px;
+}
+
+.activeMenu {
+  right: 0%;
+}
+
+.micon {
+  position: absolute;
+  right: 10px;
+  top: 20px;
+  background: transparent;
+  margin-right: 15px;
+
+}
+
+.App.dark .menu {
+  background: linear-gradient(135deg, #1c1f26, #3b3f47);
+  color: #b0bec5;
+  box-shadow: 0px 10px 20px rgba(90, 89, 89, 0.3);
+}
+
+.App.dark .menu ul li:hover {
+  color: white;
+}
+
+.App.dark .main-header {
+  background: linear-gradient(135deg, #1c1f26, #3b3f47);
+  color: #b0bec5;
+  box-shadow: 0px 10px 20px rgba(90, 89, 89, 0.3);
+}
