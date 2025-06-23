@@ -1,0 +1,8 @@
+[
+  { "id": 1, "name": "iPhone 14", "category": "Electronics", "price": 999 },
+  { "id": 2, "name": "Nike Shoes", "category": "Fashion", "price": 120 },
+  { "id": 3, "name": "MacBook Air", "category": "Electronics", "price": 1299 },
+  { "id": 4, "name": "Coffee Mug", "category": "Home", "price": 15 },
+  { "id": 5, "name": "Leather Wallet", "category": "Fashion", "price": 49 },
+  { "id": 6, "name": "LED Lamp", "category": "Home", "price": 30 }
+]
