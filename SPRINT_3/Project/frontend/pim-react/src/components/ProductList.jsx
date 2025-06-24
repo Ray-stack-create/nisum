@@ -6,6 +6,29 @@ import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import ProductViewModal from "../components/ProductViewModal";
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
+import AnimatedList from "./AnimatedList";
+
+
+
+const AnimatedTableRow = ({ children, index }) => {
+  const ref = useRef(null);
+  const inView = useInView(ref, { amount: 0.3, triggerOnce: true });
+
+  return (
+    <motion.tr
+      ref={ref}
+      data-index={index}
+      initial={{ opacity: 0, scale: 0.95 }}
+      animate={inView ? { opacity: 1, scale: 1 } : {}}
+      transition={{ duration: 0.3, delay: index * 0.05 }}
+    >
+      {children}
+    </motion.tr>
+  );
+};
+
 
 function ProductList() {
   const [showModal, setShowModal] = useState(false);
@@ -16,6 +39,9 @@ function ProductList() {
   const [isDeleted, setIsDeleted] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
 
+
+
+  
   const handleViewClick = async (product) => {
     setViewProduct(product);
     setShowModal(true);
@@ -101,47 +127,48 @@ function ProductList() {
           </tr>
         </thead>
         <tbody id="productsTableBody">
-          {products.length > 0 ? (
-            products.map((product) => (
-              <tr key={product.productId}>
-                <td>{product.productId}</td>
-                <td>{product.productName}</td>
-                <td>{product.sku}</td>
-                <td>{product.category}</td>
-                <td>{product.status}</td>
-                <td>{product.lastModifiedDate}</td>
-                <td>
-                  <Button
-                    variant="outline-primary"
-                    size="sm"
-                    as={Link}
-                    to={`/edit/${product.productId}`}
-                  >
-                    Edit
-                  </Button>{" "}
-                  <Button
-                    variant="outline-danger"
-                    size="sm"
-                    onClick={() => handleDeleteClick(product)}
-                  >
-                    Delete
-                  </Button>
-                  <Button
-                    variant="outline-info"
-                    size="sm"
-                    onClick={() => handleViewClick(product)}
-                  >
-                    <FaEye />
-                  </Button>
-                </td>
-              </tr>
-            ))
-          ) : (
-            <tr>
-              <td colSpan="6">No products found.</td>
-            </tr>
-          )}
-        </tbody>
+  {products.length > 0 ? (
+    products.map((product, index) => (
+      <AnimatedTableRow key={product.productId} index={index}>
+        <td>{product.productId}</td>
+        <td>{product.productName}</td>
+        <td>{product.sku}</td>
+        <td>{product.category}</td>
+        <td>{product.status}</td>
+        <td>{product.lastModifiedDate}</td>
+        <td>
+          <Button
+            variant="outline-primary"
+            size="sm"
+            as={Link}
+            to={`/edit/${product.productId}`}
+          >
+            Edit
+          </Button>{" "}
+          <Button
+            variant="outline-danger"
+            size="sm"
+            onClick={() => handleDeleteClick(product)}
+          >
+            Delete
+          </Button>
+          <Button
+            variant="outline-info"
+            size="sm"
+            onClick={() => handleViewClick(product)}
+          >
+            <FaEye />
+          </Button>
+        </td>
+      </AnimatedTableRow>
+    ))
+  ) : (
+    <tr>
+      <td colSpan="6">No products found.</td>
+    </tr>
+  )}
+</tbody>
+
       </table>
       <ProductViewModal
         show={showModal}
