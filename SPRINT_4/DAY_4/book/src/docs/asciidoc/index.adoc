@@ -1,0 +1,11 @@
+= Book API Documentation
+:toc:
+:sectnums:
+
+== Get Book by ID
+
+=== Successful response
+
+include::{snippets}/get-book-success/http-request.adoc[]
+include::{snippets}/get-book-success/http-response.adoc[]
+include::{snippets}/get-book-success/response-fields.adoc[]
