@@ -1,0 +1,131 @@
+.button-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.search-box input {
+  border: none;
+  padding: 8px 12px;
+  outline: none;
+  width: 180px;
+}
+
+.search-box button {
+  background-color: #0ea5e9;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.search-box button:hover {
+  background-color: #0284c7;
+}
+
+.products-list-section {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: 24px;
+}
+
+.products-list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.products-list-header h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.products-list-header button {
+  margin-left: 8px;
+  padding: 8px 18px;
+  background: #61dafb;
+  color: #222;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.products-list-header button:hover {
+  background: #21a1f3;
+  color: #fff;
+}
+
+.products-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+}
+
+.products-table th,
+.products-table td {
+  padding: 12px 10px;
+  text-align: left;
+}
+
+.products-table th {
+  background: #f2f4f8;
+  color: #444;
+  font-weight: 600;
+}
+
+.products-table tbody tr {
+  border-bottom: 1px solid #eaeaea;
+}
+
+.products-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.products-table td {
+  vertical-align: middle;
+}
+
+.edit-btn,
+.delete-btn {
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-right: 6px;
+  padding: 4px 6px;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.edit-btn:hover {
+  background: #e3f2fd;
+}
+
+.delete-btn:hover {
+  background: #ffebee;
+}
+
+
+
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}

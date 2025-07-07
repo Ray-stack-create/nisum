@@ -1,0 +1,18 @@
+server:
+  port: 8082
+
+spring:
+  datasource:
+    url: jdbc:sqlserver://localhost\\SQLEXPRESS:1433;databaseName=pim_db;encrypt=false;trustServerCertificate=true
+    username: sankha
+    password: hellokity8@
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+  jpa:
+    properties:
+      hibernate.dialect: org.hibernate.dialect.SQLServerDialect
+
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+

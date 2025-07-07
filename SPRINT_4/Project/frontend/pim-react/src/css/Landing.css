@@ -1,0 +1,135 @@
+.landing-page {
+  font-family: 'Segoe UI', sans-serif;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+.landing-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0f172a;
+  padding: 15px 40px 5px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid #334155;
+}
+
+.logo-section-land {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.landing-nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.landing-nav a {
+  color: #e2e8f0;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 5px;
+}
+
+.landing-nav a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: #38bdf8;
+  left: 0;
+  bottom: 0;
+  transition: width 0.3s ease;
+}
+
+.landing-nav a:hover::after {
+  width: 100%;
+}
+
+.landing-nav a:hover {
+  color: #38bdf8;
+}
+
+.login-btn {
+  background-color: #38bdf8;
+  border: none;
+  color: white;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.login-btn:hover {
+  background-color: #0ea5e9;
+}
+
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+
+.hero-overlay {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  z-index: 2;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 20px 30px;
+  border-radius: 12px;
+  max-width: 500px;
+}
+
+.hero-overlay h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.hero-overlay p {
+  font-size: 1.2rem;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .landing-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .hero-overlay h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-overlay p {
+    font-size: 1rem;
+  }
+
+  .landing-nav {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+}
