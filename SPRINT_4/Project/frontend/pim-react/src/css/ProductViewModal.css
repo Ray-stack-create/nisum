@@ -1,0 +1,21 @@
+.product-view-modal .modal-content {
+  border-radius: 16px;
+  background: linear-gradient(to right, #f8fafc, #e0f7fa);
+  color: #333;
+  font-family: 'Segoe UI', sans-serif;
+  padding: 20px;
+}
+
+.product-view-modal .modal-header {
+  border-bottom: 1px solid #ccc;
+}
+
+.product-view-modal .modal-body {
+  padding: 20px;
+}
+
+.product-details p {
+  margin: 10px 0;
+  font-size: 1rem;
+  line-height: 1.4;
+}

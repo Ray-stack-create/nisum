@@ -1,0 +1,68 @@
+.user-card {
+  background-color: #3a86ff;
+  color: white;
+  padding: 30px;
+  border-radius: 16px;
+  max-width:100%;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid white;
+  margin-bottom: 15px;
+  background-color: #ffffff33;
+}
+
+.email {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.bio {
+  margin-top: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 12px;
+  border-radius: 10px;
+}
+
+
+.button-group {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.profile-button {
+  background-color: #fff;
+  color: #3a86ff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.profile-button:hover {
+  background-color: #e0e0e0;
+}
+
+.profile-button.secondary {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: white;
+  border: 1px solid #fff;
+}
+
+.profile-button.secondary:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+}

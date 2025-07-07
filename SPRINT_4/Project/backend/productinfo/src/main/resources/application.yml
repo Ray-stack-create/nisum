@@ -1,0 +1,47 @@
+server:
+  port: 8000
+
+spring:
+  application:
+    name: productinfo
+
+  cloud:
+    compatibility-verifier:
+      enabled: false  # ✅ Prevents version compatibility error with Spring Boot 3.5.3
+
+    gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins:
+              - "http://localhost:3000"
+              - "http://localhost:8000"
+              - "http://localhost:8082"
+              - "http://localhost:8085"
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+              - PATCH
+              - OPTIONS
+            allowedHeaders:
+              - "*"
+            allowCredentials: false
+            maxAge: 3600
+
+      routes:
+        - id: product-service-route
+          uri: http://localhost:8085
+          predicates:
+            - Path=/products/**
+
+        - id: category-service-route
+          uri: http://localhost:8082
+          predicates:
+            - Path=/categories/**
+
+        - id: seller-service-route
+          uri: http://localhost:8085
+          predicates:
+            - Path=/sellers/**
