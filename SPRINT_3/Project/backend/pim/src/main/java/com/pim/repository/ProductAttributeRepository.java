@@ -10,3 +10,4 @@ public interface ProductAttributeRepository extends JpaRepository<ProductAttribu
     void deleteByProduct_ProductId(Integer productId);
 
 }
+ 
